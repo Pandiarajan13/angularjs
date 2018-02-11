@@ -1,0 +1,54 @@
+<!Doctype html>
+<html> 
+    <title>FORM</title>
+    <h1 align="center">FORM</h1>
+<script src="../angular.min.js"></script>
+ 
+<body> 
+   
+<div ng-app="firstapp" ng-controller="myctrl" > 
+FirstName:<br>
+<input type="text" ng-model="fname"><br>
+LastName:<br>
+<input type="text" ng-model="lname"><br>
+Gender:<br>
+Male<input type="radio" ng-model="gender" value="male"><br>
+Female<input type="radio" ng-model="gender" value="female"><br>
+Year:<br>
+<input type="date" ng-model="dob"><br>
+Email:<br>
+<input type="email" ng-model="id"><br>
+Mobile:<br>
+<input type="number" ng-model="ph"><br>
+<br>
+<button ng-click="sub();">Submit</button>
+<div ng-show="details">
+ pandi {{details}} 
+</div>
+<div> 
+<script>
+var app=angular.module('firstapp',[]);
+app.controller('myctrl',function($scope)
+{
+$scope.fname=" ";
+$scope.lname=" ";
+$scope.gender='';
+$scope.dob=" ";
+$scope.id=" ";
+$scope.ph=" ";
+$scope.sub=function(){
+alert("hi");
+$scope.details=true;
+return $scope.content=$scope.fname;
+return $scope.content=$scope.lname;
+return $scope.content=$scope.gender;
+return $scope.content=$scope.dob;
+return $scope.content=$scope.id;
+return $scope.content=$scope.ph;
+}
+    
+});
+        </script>
+    
+</body>
+</html>
